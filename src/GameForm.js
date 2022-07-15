@@ -14,7 +14,7 @@ function GameForm({ game: initialGame, notify }) {
     function handleSubmit(evt) {
         evt.preventDefault();
 
-        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games${game.gameId}`;
+        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games/${game.id}`;
         const method = isAdd ? "POST" : "PUT";
         const expectedStatus = isAdd ? 201 : 204;
 
@@ -81,7 +81,7 @@ function GameForm({ game: initialGame, notify }) {
                         value={game.quantity} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <select htmlFor="rating" name="rating" id ="rating" onChange={handleChange} value={game.esrbRating}>
+                    <select htmlFor="esrbRating" name="esrbRating" id ="esrbRating" onChange={handleChange} value={game.esrbRating}>
                     <option>Esrb Rating</option>
                     <option>E</option>
                     <option>E10+</option>

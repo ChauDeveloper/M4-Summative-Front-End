@@ -21,7 +21,7 @@ function Game() {
         if(event.target.value == ""){
             setGames([]);
         } else {
-            fetch(`http://localhost:8080/game?level=${event.target.value}`)
+            fetch(`http://localhost:8080/game?esrbRating=${event.target.value}`)
             .then(response => response.json())
             .then(result => setGames(result))
             .catch(error => console.log(error))
@@ -30,18 +30,16 @@ function Game() {
 
 
     function addClick() {
-        setScopedGame({ id: 0, title: "", lastName: "", esrbRating:"", description:"", price:"", studio:"", quantity:""});
+        setScopedGame({ id: 0, title: "", description: "", esrbRating:"", price:"", studio:"", quantity:""});
         setShowForm(true);
     }
 
     function notify({ action, game, error }) {
-
         if (error) {
             setError(error);
             setShowForm(false);
             return;
         }
-
         switch (action) {
             case "add":
                 setGames([...games, game]);
@@ -108,7 +106,7 @@ function Game() {
                         <th>Quantity</th>                
                     </tr>
                     <tbody>
-                        {games.map(r => <GameCard key={r.gameId} game={r} notify={notify} />)}
+                        {games.map(g => <GameCard key={g.gameId} game={g} notify={notify} />)}
                     </tbody>
                 </table>
             </div>
