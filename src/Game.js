@@ -17,11 +17,36 @@ function Game() {
         .catch(console.log);
     }, []);
 
-    function ratingClick(event){
+
+    function ratingClick(event){     
         if(event.target.value == ""){
             setGames([]);
         } else {
-            fetch(`http://localhost:8080/game?esrbRating=${event.target.value}`)
+            fetch(`http://localhost:8080/games?esrbRating=${event.target.value}`)
+            .then(response => response.json())
+            .then(result => setGames(result))
+            .catch(error => console.log(error))
+        }
+    }
+
+    function titleClick(event){       
+        event.preventDefault();   
+        if(document.getElementById("title").value == ""){
+            setGames([]);
+        } else {
+            fetch(`http://localhost:8080/games?title=${document.getElementById("title").value}`)
+            .then(response => response.json())
+            .then(result => setGames(result))
+            .catch(error => console.log(error))
+        }
+    }
+
+    function studioClick(evt){
+        evt.preventDefault();
+        if(document.getElementById("studio").value == ""){
+            setGames([]);
+        } else {
+            fetch(`http://localhost:8080/games/studio/${document.getElementById("studio").value}`)
             .then(response => response.json())
             .then(result => setGames(result))
             .catch(error => console.log(error))
@@ -76,7 +101,7 @@ function Game() {
             <div>
                 <h1 id='gameTitle'>Games</h1>
                 <button className="btn btn-primary" type="button" onClick={addClick}>Add a Game</button>
-                <select name="level" onChange={ratingClick}>
+                <select name="esrbRating" onChange={ratingClick}>
                     <option>Get Game by ESRB Rating</option>
                     <option>E</option>
                     <option>E10+</option>
@@ -85,15 +110,19 @@ function Game() {
                     <option>AO</option>
                     <option>RP</option>
                 </select>
+
+                <form name="titleForm" onSubmit={titleClick}>
+                <label htmlFor="title">Get Game by Title</label>
+                <input type="text" id="title" name="title" ></input>
+                <input type="submit" value="Submit" ></input>
+                </form>
+
                 <div>
-                <label for="title">Get Game by Title</label>
-                <input type="text" id="title"></input>
-                <input type="submit" value="Submit" onClick={addClick}></input>
-                </div>
-                <div>
-                <label>Get Game by Studio</label>
-                <input type="text" id="studio"></input>
-                <input type="submit" value="Submit" onClick={addClick}></input>
+                <form name="studioForm" onSubmit={studioClick}>
+                <label htmlFor="studio" >Get Game by Studio</label>
+                <input type="text" id="studio" name="studio"></input>
+                <input type="submit" value="Submit" ></input>
+                </form>
                 </div>
             
                 <table id='game'>
