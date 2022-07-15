@@ -10,7 +10,7 @@ function GameCard({ game, notify }) {
     return (
         <tr key={game.gameId}>
             <td>{game.title}</td>
-            <td>{game.esbrRating}</td>
+            <td>{game.esrbRating}</td>
             <td>{game.description}</td>
             <td>{game.price}</td>
             <td>{game.studio}</td>

@@ -17,7 +17,7 @@ function Game() {
         .catch(console.log);
     }, []);
 
-    function levelClick(event){
+    function ratingClick(event){
         if(event.target.value == ""){
             setGames([]);
         } else {
@@ -28,23 +28,9 @@ function Game() {
         }
     }
 
-    function stateClick(event){
-        if(event.target.value == ""){
-            setGames([]);
-        } else {
-            fetch(`http://localhost:8080/game?state=${event.target.value}`)
-            .then(response => response.json())
-            .then(result => setGames(result))
-            .catch(error => console.log(error))
-        }
-    }
-
-
-
-
 
     function addClick() {
-        setScopedGame({ id: 0, title: "", lastName: "", esbrRating:"", description:"", price:"", studio:"", quantity:""});
+        setScopedGame({ id: 0, title: "", lastName: "", esrbRating:"", description:"", price:"", studio:"", quantity:""});
         setShowForm(true);
     }
 
@@ -75,8 +61,7 @@ function Game() {
             case "delete":
                 setGames(games.filter(e => e.id !== game.id));
                 break;
-            case "level":
-
+           
         }
         
         setError("");
@@ -93,25 +78,30 @@ function Game() {
             <div>
                 <h1 id='gameTitle'>Games</h1>
                 <button className="btn btn-primary" type="button" onClick={addClick}>Add a Game</button>
-                <select name="level" onChange={levelClick}>
-                    <option>Get Game by Level</option>
-                    <option>Gold</option>
-                    <option>Silver</option>
-                    <option>Bronze</option>
+                <select name="level" onChange={ratingClick}>
+                    <option>Get Game by ESRB Rating</option>
+                    <option>E</option>
+                    <option>E10+</option>
+                    <option>T</option>
+                    <option>M</option>
+                    <option>AO</option>
+                    <option>RP</option>
                 </select>
-                <select name="state" onChange={stateClick}>
-                    <option>Get Game by State</option>
-                    <option>florida</option>
-                    <option>california</option>
-                    <option>texas</option>
-                    <option>ariona</option>
-
-                </select>
-                
+                <div>
+                <label for="title">Get Game by Title</label>
+                <input type="text" id="title"></input>
+                <input type="submit" value="Submit" onClick={addClick}></input>
+                </div>
+                <div>
+                <label>Get Game by Studio</label>
+                <input type="text" id="studio"></input>
+                <input type="submit" value="Submit" onClick={addClick}></input>
+                </div>
+            
                 <table id='game'>
                     <tr>
                         <th>Title</th>
-                        <th>Esbr Rating</th>
+                        <th>Esrb Rating</th>
                         <th>Description</th>
                         <th>Price</th>
                         <th>Studio</th>

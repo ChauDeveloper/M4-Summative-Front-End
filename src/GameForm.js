@@ -14,7 +14,7 @@ function GameForm({ game: initialGame, notify }) {
     function handleSubmit(evt) {
         evt.preventDefault();
 
-        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games${game.id}`;
+        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games${game.gameId}`;
         const method = isAdd ? "POST" : "PUT";
         const expectedStatus = isAdd ? 201 : 204;
 
@@ -51,49 +51,45 @@ function GameForm({ game: initialGame, notify }) {
             <h1>{game.id > 0 ? "Edit" : "Add"} Game</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="artist">Title</label>
-                    <input type="text" id="firstName" name="firstName"
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id="title" name="title"
                         className="form-control"
-                        value={game.firstName} onChange={handleChange} />
+                        value={game.title} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="album">Esbr Rating</label>
-                    <input type="text" id="lastName" name="lastName"
+                    <label htmlFor="description">Description</label>
+                    <input type="text" id="description" name="description"
                         className="form-control"
-                        value={game.lastName} onChange={handleChange} />
+                        value={game.description} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="year">Description</label>
-                    <input type="text" id="street" name="street"
+                    <label htmlFor="price">Price</label>
+                    <input type="text" id="price" name="price"
                         className="form-control"
-                        value={game.street} onChange={handleChange} />
+                        value={game.price} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="year">Price</label>
-                    <input type="text" id="city" name="city"
+                    <label htmlFor="studio">Studio</label>
+                    <input type="text" id="studio" name="studio"
                         className="form-control"
-                        value={game.city} onChange={handleChange} />
+                        value={game.studio} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="state">Studio</label>
-                    <input type="text" id="state" name="state"
+                    <label htmlFor="quantity">Quantity</label>
+                    <input type="text" id="quantity" name="quantity"
                         className="form-control"
-                        value={game.state} onChange={handleChange} />
+                        value={game.quantity} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="zipCode">Quantity</label>
-                    <input type="text" id="zipCode" name="zipCode"
-                        className="form-control"
-                        value={game.zipCode} onChange={handleChange} />
-                </div>
-                <div className="mb-3">
-                    <select htmlFor="level" name="level" on onChange={handleChange} value={game.level}>
-                    <option>Level</option>
-                    <option>Gold</option>
-                    <option>Silver</option>
-                    <option>Bronze</option>
+                    <select htmlFor="rating" name="rating" id ="rating" onChange={handleChange} value={game.esrbRating}>
+                    <option>Esrb Rating</option>
+                    <option>E</option>
+                    <option>E10+</option>
+                    <option>T</option>
+                    <option>M</option>
+                    <option>AO</option>
+                    <option>RP</option>
                 </select>
-                
                 </div>
                 <div className="mb-3">
                     <button className="btn btn-primary mr-3" type="submit">Save</button>
