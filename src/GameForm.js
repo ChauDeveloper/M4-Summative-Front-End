@@ -14,7 +14,7 @@ function GameForm({ game: initialGame, notify }) {
     function handleSubmit(evt) {
         evt.preventDefault();
 
-        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games/${game.id}`;
+        const url = isAdd ? "http://localhost:8080/games" : `http://localhost:8080/games`;
         const method = isAdd ? "POST" : "PUT";
         const expectedStatus = isAdd ? 201 : 204;
 
