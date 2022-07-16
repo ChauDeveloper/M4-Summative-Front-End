@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Console.css';
 import ConsoleCard from './ConsoleCard.js';
 import ConsoleForm from './ConsoleForm.js';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function Console() {
 
@@ -98,6 +99,7 @@ function Console() {
                         {consoles.map(g => <ConsoleCard key={g.consoleId} console={g} notify={notify} />)}
                     </tbody>
                 </table>
+                <button><Link to="/">Back</Link></button>
             </div>
         </>
     )
