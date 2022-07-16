@@ -1,7 +1,7 @@
-import Game from './Game.js';
+import Game from './components/Game/Game.js';
 import Home from './Home.js';
-import TShirt from './TShirt.js';
-import Console from './Console.js';
+import TShirt from './components/TShirt/TShirt.js';
+import Console from './components/Console/Console.js';
 function App() {
   return (
     <main className="container">
