@@ -19,7 +19,7 @@ function TShirt() {
 
 
     function sizeClick(event){     
-        if(event.target.value == ""){
+        if(event.target.value === ""){
             setTShirts([]);
         } else {
             fetch(`http://localhost:8080/tshirt/size/${event.target.value}`)
@@ -31,7 +31,7 @@ function TShirt() {
 
     function colorClick(event){       
         event.preventDefault();   
-        if(document.getElementById("color").value == ""){
+        if(document.getElementById("color").value === ""){
             setTShirts([]);
         } else {
             fetch(`http://localhost:8080/tshirt/color/${document.getElementById("color").value}`)
@@ -88,6 +88,7 @@ function TShirt() {
             <div>
                 <h1 id='tShirtTitle'>TShirts</h1>
                 <button className="btn btn-primary" type="button" onClick={addClick}>Add a TShirt</button>
+                
                 <select name="size" onChange={sizeClick}>
                     <option>Get TShirt by Size</option>
                     <option>XXS</option>

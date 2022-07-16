@@ -19,7 +19,7 @@ function Game() {
 
 
     function ratingClick(event){     
-        if(event.target.value == ""){
+        if(event.target.value === ""){
             setGames([]);
         } else {
             fetch(`http://localhost:8080/games?esrbRating=${event.target.value}`)
@@ -31,7 +31,7 @@ function Game() {
 
     function titleClick(event){       
         event.preventDefault();   
-        if(document.getElementById("title").value == ""){
+        if(document.getElementById("title").value === ""){
             setGames([]);
         } else {
             fetch(`http://localhost:8080/games?title=${document.getElementById("title").value}`)
@@ -43,7 +43,7 @@ function Game() {
 
     function studioClick(evt){
         evt.preventDefault();
-        if(document.getElementById("studio").value == ""){
+        if(document.getElementById("studio").value === ""){
             setGames([]);
         } else {
             fetch(`http://localhost:8080/games/studio/${document.getElementById("studio").value}`)

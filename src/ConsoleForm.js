@@ -3,7 +3,7 @@ import { useState } from 'react';
 function ConsoleForm({ console: initialConsole, notify }) {
 
     const [console, setConsole] = useState(initialConsole);
-    const isAdd = initialConsole.id === 0;
+    const isAdd = initialConsole.consoleId === 0;
 
     function handleChange(evt) {
         const clone = { ...console };
@@ -48,7 +48,7 @@ function ConsoleForm({ console: initialConsole, notify }) {
 
     return (
         <>
-            <h1>{console.id > 0 ? "Edit" : "Add"} Console</h1>
+            <h1>{console.consoleId > 0 ? "Edit" : "Add"} Console</h1>
             <form onSubmit={handleSubmit}>
             <div className="mb-3">
                     <label htmlFor="model">Model</label>

@@ -10,6 +10,9 @@ function App() {
       <Console />
       <br /><br /><br />
       <TShirt />
+       {/* <br /><br /><br />
+       <br /><br /><br />
+      <Home /> */}
     </main>
   );
 }

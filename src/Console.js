@@ -19,7 +19,7 @@ function Console() {
 
     function manufacturerClick(evt){
         evt.preventDefault();
-        if(document.getElementById("manufacturer").value == ""){
+        if(document.getElementById("manufacturer").value === ""){
             setConsoles([]);
         } else {
             fetch(`http://localhost:8080/console/manufacturer/${document.getElementById("manufacturer").value}`)
@@ -31,7 +31,7 @@ function Console() {
 
 
     function addClick() {
-        setScopedConsole({ id: 0, model: "", manufacturer: "", memoryAmount:"", processor:"", price:"",  quantity:""});
+        setScopedConsole({ consoleId: 0, model: "", manufacturer: "", memoryAmount:"", processor:"", price:"",  quantity:""});
         setShowForm(true);
     }
 
@@ -47,7 +47,7 @@ function Console() {
                 break;
             case "edit":
                 setConsoles(consoles.map(e => {
-                    if (e.id === console.id) {
+                    if (e.consoleId === console.consoleId) {
                         return console;
                     }
                     return e;
@@ -58,7 +58,7 @@ function Console() {
                 setShowForm(true);
                 return;
             case "delete":
-                setConsoles(consoles.filter(e => e.id !== console.id));
+                setConsoles(consoles.filter(e => e.consoleId !== console.consoleId));
                 break;
            
         }
