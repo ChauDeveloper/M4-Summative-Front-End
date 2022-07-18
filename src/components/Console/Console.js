@@ -23,7 +23,7 @@ function Console() {
         if(document.getElementById("manufacturer").value === ""){
             setConsoles([]);
         } else {
-            fetch(`http://localhost:8080/console/manufacturer/${document.getElementById("manufacturer").value}`)
+            fetch(`http://localhost:8080/console?manufacturer=${document.getElementById("manufacturer").value}`)
             .then(response => response.json())
             .then(result => setConsoles(result))
             .catch(error => console.log(error))

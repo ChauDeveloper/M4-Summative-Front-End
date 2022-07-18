@@ -20,7 +20,7 @@ function Game() {
 
 
     function ratingClick(event){     
-        if(event.target.value === ""){
+        if(event.target.value === "" || event.target.value === "Get Game by ESRB Rating"){
             setGames([]);
         } else {
             fetch(`http://localhost:8080/games?esrbRating=${event.target.value}`)

@@ -23,7 +23,7 @@ function TShirt() {
         if(event.target.value === "" || event.target.value === "Get TShirt by Size"){
             setTShirts([]);
         } else {
-            fetch(`http://localhost:8080/tshirt/size/${event.target.value}`)
+            fetch(`http://localhost:8080/tshirt?size=${event.target.value}`)
             .then(response => response.json())
             .then(result => setTShirts(result))
             .catch(error => console.log(error))
@@ -35,7 +35,7 @@ function TShirt() {
         if(document.getElementById("color").value === ""){
             setTShirts([]);
         } else {
-            fetch(`http://localhost:8080/tshirt/color/${document.getElementById("color").value}`)
+            fetch(`http://localhost:8080/tshirt?color=${document.getElementById("color").value}`)
             .then(response => response.json())
             .then(result => setTShirts(result))
             .catch(error => console.log(error))
