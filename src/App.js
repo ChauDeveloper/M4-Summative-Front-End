@@ -1,21 +1,23 @@
-import Game from './Game.js';
+import Game from './components/Game/Game.js';
 import Home from './Home.js';
-import TShirt from './TShirt.js';
-import Console from './Console.js';
 import Invoice from './Invoice.js';
+import TShirt from './components/TShirt/TShirt.js';
+import Console from './components/Console/Console.js';
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+
+
 function App() {
   return (
-    <main className="container">
-       <Home />
-      <div><Game /></div>
-      <div><Console /></div>
-      <div><TShirt /></div>
-      <div><Invoice /></div>
-       {/* <br /><br /><br />
-       <br /><br /><br />
-      <Home /> */}
-    </main>
-  );
+    <Router>
+    <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/game" component={Game} />
+    <Route exact path="/console" component={Console} />
+    <Route exact path="/tshirt" component={TShirt} />
+    <Route exact path="/invice" component={invoice} />
+</Switch>
+</Router>
+);
 }
 
 export default App;

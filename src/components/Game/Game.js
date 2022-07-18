@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Game.css';
 import GameCard from './GameCard.js';
 import GameForm from './GameForm.js';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function Game() {
 
@@ -138,6 +139,8 @@ function Game() {
                         {games.map(g => <GameCard key={g.gameId} game={g} notify={notify} />)}
                     </tbody>
                 </table>
+                <br/>
+             <button><Link to="/">Back</Link></button>
             </div>
         </>
     )
