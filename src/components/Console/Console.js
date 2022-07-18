@@ -99,6 +99,7 @@ function Console() {
                         {consoles.map(g => <ConsoleCard key={g.consoleId} console={g} notify={notify} />)}
                     </tbody>
                 </table>
+                <br/>
                 <button><Link to="/">Back</Link></button>
             </div>
         </>

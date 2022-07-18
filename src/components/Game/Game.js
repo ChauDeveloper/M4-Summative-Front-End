@@ -136,7 +136,7 @@ function Game() {
                         <th>Quantity</th>                
                     </tr>
                     <tbody>
-                        {games.map(g => <GameCard key={g.gameId} game={g} notify={notify} />)}
+                        {games.map(g => <GameCard key={g.id} game={g} notify={notify} />)}
                     </tbody>
                 </table>
                 <br/>

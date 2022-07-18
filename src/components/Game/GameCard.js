@@ -1,14 +1,14 @@
 function GameCard({ game, notify }) {
 
     function handleDelete() {
-        fetch(`http://localhost:8080/games/${game.gameId}`, { method: "DELETE" })
+        fetch(`http://localhost:8080/games/${game.id}`, { method: "DELETE" })
             .then(() => notify({ action: "delete", game: game }))
             .catch(error => notify({ action: "delete", error: error }));
     }
 
 
     return (
-        <tr key={game.gameId}>
+        <tr key={game.id}>
             <td>{game.title}</td>
             <td>{game.esrbRating}</td>
             <td>{game.description}</td>

@@ -20,7 +20,7 @@ function TShirt() {
 
 
     function sizeClick(event){     
-        if(event.target.value === ""){
+        if(event.target.value === "" || event.target.value === "Get TShirt by Size"){
             setTShirts([]);
         } else {
             fetch(`http://localhost:8080/tshirt/size/${event.target.value}`)
@@ -116,9 +116,10 @@ function TShirt() {
                         <th>Quantity</th>                
                     </tr>
                     <tbody>
-                        {tShirts.map(g => <TShirtCard key={g.tShirtId} tShirt={g} notify={notify} />)}
+                        {tShirts.map(t => <TShirtCard key={t.id} tShirt={t} notify={notify} />)}
                     </tbody>
                 </table>
+                <br/>
                 <button><Link to="/">Back</Link></button>
             </div>
         </>

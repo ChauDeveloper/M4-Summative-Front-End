@@ -1,14 +1,14 @@
 function TShirtCard({ tShirt, notify }) {
 
     function handleDelete() {
-        fetch(`http://localhost:8080/tshirt/${tShirt.tShirtId}`, { method: "DELETE" })
+        fetch(`http://localhost:8080/tshirt/${tShirt.id}`, { method: "DELETE" })
             .then(() => notify({ action: "delete", tShirt: tShirt }))
             .catch(error => notify({ action: "delete", error: error }));
     }
 
 
     return (
-        <tr key={tShirt.tShirtId}>
+        <tr key={tShirt.id}>
             <td>{tShirt.size}</td>
             <td>{tShirt.color}</td>
             <td>{tShirt.description}</td>

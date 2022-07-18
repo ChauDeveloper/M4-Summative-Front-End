@@ -1,7 +1,4 @@
-import Game from './components/Game/Game.js';
-import Console from './components/Console/Console.js';
-import Tshirt from './components/TShirt/TShirt.js';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
 import './index.css';
 
 const Home = () => {
