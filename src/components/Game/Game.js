@@ -47,7 +47,7 @@ function Game() {
         if(document.getElementById("studio").value === ""){
             setGames([]);
         } else {
-            fetch(`http://localhost:8080/games/studio/${document.getElementById("studio").value}`)
+            fetch(`http://localhost:8080/games?studio=${document.getElementById("studio").value}`)
             .then(response => response.json())
             .then(result => setGames(result))
             .catch(error => console.log(error))
