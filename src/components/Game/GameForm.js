@@ -84,7 +84,6 @@ function GameForm({ game: initialGame, notify }) {
                     <select htmlFor="esrbRating" name="esrbRating" id ="esrbRating" onChange={handleChange} value={game.esrbRating}>
                     <option>Esrb Rating</option>
                     <option>E</option>
-                    <option>E10+</option>
                     <option>T</option>
                     <option>M</option>
                     <option>AO</option>
