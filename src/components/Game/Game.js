@@ -105,7 +105,6 @@ function Game() {
                 <select name="esrbRating" onChange={ratingClick}>
                     <option>Get Game by ESRB Rating</option>
                     <option>E</option>
-                    <option>E10+</option>
                     <option>T</option>
                     <option>M</option>
                     <option>AO</option>
