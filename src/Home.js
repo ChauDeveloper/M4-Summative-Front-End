@@ -1,3 +1,4 @@
+
 import Game from './components/Game/Game.js';
 import Console from './components/Console/Console.js';
 import Tshirt from './components/TShirt/TShirt.js';
@@ -17,14 +18,13 @@ const Home = () => {
                       <li><Link to="/game">Game</Link></li>
                       <li><Link to="/console">Console</Link></li>
                       <li><Link to="/tshirt">Tshirt</Link></li>
-                   
-                    </ul>
-           
-                
-                </div>
+                      <li><Link to="/invoice">Invoice</Link></li>                                       
+                    </ul>         
+        </div>
       </div>
       </>
     );
   };
   
   export default Home;
+
