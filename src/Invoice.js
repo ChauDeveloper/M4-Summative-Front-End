@@ -62,7 +62,7 @@ function Invoice() {
       <div>
         <h1 id="invoiceTitle">Invoice</h1>
         <button className="btn btn-primary" type="button" onClick={addClick}>
-          Add an Invoice
+          Add Invoice
         </button>
         {/* <div>
           <form name="manufacturerForm" onSubmit={manufacturerClick}>

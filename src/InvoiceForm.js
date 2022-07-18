@@ -132,7 +132,7 @@ function InvoiceForm({ invoice: intialInvoice, notify }) {
             onChange={handleChange}
           />
         </div>
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <lable htmlFor="unitPrice">Unit Price</lable>
           <input
             type="text"
@@ -142,7 +142,7 @@ function InvoiceForm({ invoice: intialInvoice, notify }) {
             value={invoice.unitPrice}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <div className="mb-3">
           <lable htmlFor="quantity">Quantity</lable>
           <input
@@ -154,7 +154,7 @@ function InvoiceForm({ invoice: intialInvoice, notify }) {
             onChange={handleChange}
           />
         </div>
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <lable htmlFor="subtotal">Subtotal</lable>
           <input
             type="text"
@@ -197,7 +197,7 @@ function InvoiceForm({ invoice: intialInvoice, notify }) {
             value={invoice.total}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <div className="mb-3">
           <button className="btn btn-primary mr-3" type="submit">
             Save

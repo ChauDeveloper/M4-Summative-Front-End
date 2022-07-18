@@ -6,12 +6,11 @@ import Invoice from './Invoice.js';
 function App() {
   return (
     <main className="container">
-      <div><Invoice /></div>
+       <Home />
       <div><Game /></div>
-      <br /><br /><br />      
       <div><Console /></div>
-      <br /><br /><br />
       <div><TShirt /></div>
+      <div><Invoice /></div>
        {/* <br /><br /><br />
        <br /><br /><br />
       <Home /> */}
